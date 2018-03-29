@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (min-width: 374px) {
+    .inside #map {
+        height: 350px;
+    }
+}
+
+
+/* Breakpoint for bigger devices */
+@media screen and (min-width: 767px) {
+
+    /* Restaurant listing */
+    #restaurants-list {
+        display: flex;
+        flex-wrap: wrap;        
+    }  
+
+    #restaurants-list li{
+        width: calc(100%/2 - 74px);        
+        margin: 5px;
+    }
+
+    /* Restaurant details */
+    .inside #maincontent {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .info-container {
+        width: 45%;
+    }
+
+    .inside #map-container {
+        width: 45%;
+        height: 100%;
+        order: 2; 
+        margin-left: 60px;
+        box-shadow: #ddd 3px 3px 10px;
+    }
+
+    .inside #map {
+        height: 100vh; 
+    }
+
+    #restaurant-container, #reviews-container {
+        width: 100%;
+        box-shadow: #ddd 3px 3px 10px;
+        margin-bottom: 20px;
+    }
+
+    .filter-options {
+        height: 50px;
+        margin-bottom: 50px;
+    }
+
+    .filter-options select {
+        width: 200px;
+    }
+
+}
+
+/* Breakpoint for even bigger devices */
+@media screen and (min-width: 1280px) {
+
+    #restaurants-list li{
+        width: calc(100%/3 - 74px);       
+        margin: 5px;
+    }   
+
+}
