@@ -5,11 +5,23 @@ var map
 var markers = []
 
 /**
+ * Register service worker
+ */
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(() => {
+    console.log('Service worker registered');
+  }).catch(() => {
+    console.log("Registering service worker failed!");
+  });
+}
+
+/**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
+
 });
 
 /**
@@ -140,6 +152,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = restaurant.name;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
@@ -176,3 +189,6 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 }
+
+
+

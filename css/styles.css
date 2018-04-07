@@ -264,3 +264,18 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+
+/* ============== Grid ========================= */
+
+
+#maincontent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* moved map later in dom because of tabbing order. CSS to move it back to top */
+#map-container {
+  order: -1;
+  width: 100%;
+}
+
