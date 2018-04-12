@@ -259,11 +259,44 @@ nav h1 a {
 }
 
 #reviews-list li p {
-  margin: 0 0 10px;
+  margin: 5px;
+  margin-top: 20px;
 }
+
+#reviews-list li p.reviews-rating  {
+  clear: both;
+  background-color: #f58500;
+  color: #fff;
+  border: 5px solid  #f58500;
+  width: 100px;
+  text-align: center;
+  border-radius: 3px;
+} 
+#reviews-list li div p {
+  background-color: #444;
+  color: #fff;
+  margin: -5px;
+  padding: 20px;
+  border-top-left-radius: 20px;
+}
+
 #restaurant-hours td {
-  color: #666;
+  color: #666;  
 }
+
+.reviews-name {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.reviews-date {
+  float: right;
+  font-size: .9rem;
+  font-weight: 100;
+  text-shadow: #aaa 1px 1.5px;
+}
+
+
 
 /* ============== Grid ========================= */
 

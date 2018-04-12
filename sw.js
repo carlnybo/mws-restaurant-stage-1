@@ -1,12 +1,13 @@
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open('restaurants-reviews-v1').then(cache => {
+        caches.open('restaurants-reviews-v3').then(cache => {
             return cache.addAll([
                 '/index.html',
                 '/restaurant.html',
                 '/js/dbhelper.js',
                 '/js/main.js',
                 '/js/restaurant_info.js',
+                '/sw.js',
                 '/css/styles.css',
                 '/css/responsive.css',
                 '/img/1.jpg',
@@ -20,9 +21,9 @@ self.addEventListener('install', event => {
                 '/img/9.jpg',
                 '/img/10.jpg',
                 '/data/restaurants.json',
-                '/sw.js'
+                '/test.txt'
 
-            ])
+            ]);
         })
 
     );

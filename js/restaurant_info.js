@@ -117,19 +117,29 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-  const name = document.createElement('p');
-  name.innerHTML = review.name;
-  li.appendChild(name);
+  const header = document.createElement('div');
+  header.className = "reviews-header";
+  li.appendChild(header);
 
   const date = document.createElement('p');
+  date.className = "reviews-date";
   date.innerHTML = review.date;
-  li.appendChild(date);
+  header.appendChild(date);
+
+  const name = document.createElement('p');
+  name.innerHTML = review.name;
+  name.className = "reviews-name";
+  header.appendChild(name);
+
+
 
   const rating = document.createElement('p');
+  rating.className = "reviews-rating";
   rating.innerHTML = `Rating: ${review.rating}`;
   li.appendChild(rating);
 
   const comments = document.createElement('p');
+  comments.className = "reviews-comments";
   comments.innerHTML = review.comments;
   li.appendChild(comments);
 
@@ -139,7 +149,7 @@ createReviewHTML = (review) => {
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
-fillBreadcrumb = (restaurant=self.restaurant) => {
+fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
